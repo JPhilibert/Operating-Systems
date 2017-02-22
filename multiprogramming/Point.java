@@ -1,25 +1,37 @@
-import java.util.*;
+import java.util.Random;
 
 public class Point
 {
-    private int min = 0;
-    private int max = 100; //pass this?
-    private int x;
-    private int y;
+    private int m_x;
+    private int m_y;
+    private Random rand = new Random();
     
+    public Point(int max)
+    {
+        m_x = rand.nextInt(max);
+        m_y = rand.nextInt(max);
+    }
+
+    public Point(int x, int y)
+    {
+        m_x = x;
+        m_y = y;
+    }
+    //i regret not making a constructor that took a string and split it into the values it needed
     
-    public Point()
+    public double getDistance(Point p)
     {
-        Random rand = new Random();
-        x = rand.nextInt((max - min) + 1) + min;
-        y = rand.nextInt((max - min) + 1) + min;
-        System.out.println("made point " + x + y);
+        //sqrt( (x1 - x2 )^2 + (y1 - y2)^2 )
+        return Math.sqrt(Math.pow(p.getX() - m_x, 2) + Math.pow(p.getY() - m_y ,2));
     }
-    public Point(int ax, int ay)
+    
+    @Override
+    public String toString()
     {
-        x = ax;
-        y = ay;
-        System.out.println("made point " + x + y);
+        return m_x + "," + m_y;
     }
+    
+    public int getX(){return m_x;}
+    public int getY(){return m_y;}
     
 }
