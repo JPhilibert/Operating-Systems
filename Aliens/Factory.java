@@ -2,7 +2,7 @@ public class Factory
 {
     private static Factory instance;
     
-    public static Factory getInstance();
+    public static Factory getInstance()
     {
         if(instance == null)
         {
@@ -15,6 +15,6 @@ public class Factory
     
     public IMessageParser createParser(String text)
     {
-        return new MessageParser()
+        return new MessageParser(text);
     }
 }

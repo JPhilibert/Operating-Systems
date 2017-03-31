@@ -26,10 +26,10 @@
          
          System.out.println("Encrypting message 3 using Vowel Mash:");
          c = VowelMash.getInstance();
-         System.out.println(c.decrypt(msg3));
+         System.out.println(c.encrypt(msg3));
          
          System.out.println("Encrypting message 3 using Word Reverse:");
          c = WordReverse.getInstance();
-         System.out.println(c.decrypt(msg3));
+         System.out.println(c.encrypt(msg3));
      }
  }
