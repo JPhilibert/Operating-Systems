@@ -19,7 +19,7 @@ public class BestFit extends Swapper
         if(space != Integer.MAX_VALUE)//if anything has been found, insert it
         {
             mem.load(p, position, position+p.getSize());//call load method on the IMemory class
-            memory.add(i, new Node(p.getSize(), false)); //insert new node for process
+            memory.add(i, new Node(p, false)); //insert new node for process
             memory.get(i+1).sub(p.getSize());//set the remaining open space 
             return true;
         }else{
