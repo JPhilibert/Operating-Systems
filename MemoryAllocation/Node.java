@@ -21,12 +21,12 @@ public class Node
     
     public boolean checkOpen()
     {
-        return isOpen;
+        return m_isOpen;
     }
     
     public int checkSize()
     {
-        return size;
+        return m_size;
     }
     
 }
