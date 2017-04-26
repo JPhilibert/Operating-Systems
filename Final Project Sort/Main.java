@@ -4,10 +4,11 @@ import java.util.concurrent.*;
 public class Main
 {
     private ArrayList<ArrayList<Integer>> nodes = new ArrayList<ArrayList<Integer>>();
-    private final int n = 8;
+    private static int n;
     
     public static void main(String[] args) throws Exception
     {
+        n = Integer.parseInt(args[0]);
         (new Main()).go();
     }
     
