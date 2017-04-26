@@ -23,7 +23,7 @@ public abstract class Swapper implements ISwapper
         mem.unload(p);
     }
     
-    private void cleanMemory()
+   /* private void cleanMemory()
     {
         //iterate through memory, combine holes, restart until complete
         boolean allClean = false;
@@ -41,5 +41,9 @@ public abstract class Swapper implements ISwapper
                 }
             }
         }
+    }*/
+    private LinkedList cleanMemory(LinkedList m)
+    {
+        
     }
 }
