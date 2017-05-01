@@ -31,6 +31,14 @@ public class GameController implements ActionListener, IGameController
     {
       obj.tick(m_views.get(0).getWidth(), m_views.get(0).getHeight());//passes in the bounds of the first view
     }
+    
+    for(int i = 1; i < m_objects.size(); i++)
+    {
+      if(m_objects.get(0).getRectangle().intersects(m_objects.get(i).getRectangle()))
+      {
+        m_objects.get(0).death();
+      }
+    }
 
     for (IGameView obj : m_views)
     {

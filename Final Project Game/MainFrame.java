@@ -10,6 +10,7 @@ public class MainFrame extends JFrame
   public static void main(String args[])
   {
     JFrame frame = new MainFrame();
+    setFocusabe(true);
     frame.setVisible(true);
   }
 
@@ -23,8 +24,10 @@ public class MainFrame extends JFrame
 
     // model
     List<IGameObject> objects = new ArrayList<IGameObject>();
-    objects.add(Factory.getInstance().createEnemy(10, 10, 30, 30, 5, 5));
     objects.add(Factory.getInstance().createHero(10, 100, 40, 40, 5, 5));
+    objects.add(Factory.getInstance().createEnemy1(10, 10, 30, 30, 5, 5));
+    objects.add(Factory.getInstance().createEnemy2(20, 10, 30, 30, 5, 5));
+    
 
     // view
     IGameView view = Factory.getInstance().createMainView(objects);

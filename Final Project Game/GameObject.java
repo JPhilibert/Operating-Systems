@@ -33,6 +33,7 @@ public abstract class GameObject implements IGameObject
   }
 
   public abstract void tick(int maxw, int maxh);
+  public abstract boolean isEnemy();
 
   @Override
   public BufferedImage getImage()

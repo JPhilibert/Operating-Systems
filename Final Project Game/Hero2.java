@@ -1,16 +1,16 @@
 import java.awt.*;
 
-public class Hero extends GameObject implements KeyListener
+public class Hero2 extends GameObject implements KeyListener
 {
   private int m_ticks = 0;
   private int m_lives = 5;
-  private int m_velocity = 5;
+  private int m_velocity = 10;
   private int score = 0;
 
 
   public Hero(int x, int y, int w, int h, int dX, int dY)
   {
-    super("./elf.png", x, y, w, h, dX, dY);
+    super("./monkey.png", x, y, w, h, dX, dY);
   }
 
   @Override
@@ -18,7 +18,9 @@ public class Hero extends GameObject implements KeyListener
   {
     m_x = m_x + m_dX;
     m_y = m_y + m_dY;
-    score++;
+    
+    if(m_y < maxh/2)
+      score++;
     
     if (m_x > maxw)
       m_x = maxw;
@@ -29,7 +31,6 @@ public class Hero extends GameObject implements KeyListener
       m_y = maxh;
     else if (m_y < 0)
       m_y = 0;
-
   }
   
   public void death()
@@ -44,15 +45,15 @@ public class Hero extends GameObject implements KeyListener
     return m_lives;
   }
   
-  public int getScore()
-  {
-    return score;
-  }
-  
   @Override
   public boolean isEnemy()
   {
     return false;
+  }
+  
+  public int getScore()
+  {
+    return score;
   }
   
   @Override

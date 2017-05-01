@@ -1,8 +1,8 @@
-public class Ball extends GameObject
+public class Chair extends GameObject
 {
-  public Ball(int x, int y, int w, int h, int dX, int dY)
+  public Chair(int x, int y, int w, int h, int dX, int dY)
   {
-    super("./ball.png", x, y, w, h, dX, dY);
+    super("./chair.png", x, y, w, h, dX, dY);
   }
 
   @Override
@@ -12,14 +12,14 @@ public class Ball extends GameObject
     m_y = m_y + m_dY;
     
     if (m_x > maxw)
-      m_x = 0;
+      m_x = maxw/2;
     else if (m_x < 0)
-      m_x = maxw;
+      m_x = maxw/2;
 
     if (m_y > maxh)
-      m_y = 0;
+      m_y = maxh/2;
     else if (m_y < 0)
-      m_y = maxh;
+      m_y = maxh/2;
 
   }
   @Override
